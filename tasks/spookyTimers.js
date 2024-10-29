@@ -8,7 +8,7 @@ function logCalc() {
 }
 
 let result = 1;
-function finalResult() {
+function spookyTimers() {
   const logId = logCalc();
   setTimeout(() => {
     setTimeout(() => {
@@ -89,6 +89,4 @@ function finalResult() {
   return new Promise((res) => setTimeout(() => res(result), 5000));
 }
 
-module.exports = finalResult;
-
-finalResult().then(console.log);
+module.exports = spookyTimers;
