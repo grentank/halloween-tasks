@@ -1,4 +1,5 @@
 const { writeFile } = require('fs/promises');
+const { EOL } = require('os');
 
 const initial = -30;
 const final = 33299;
@@ -16,7 +17,7 @@ const content = `module.exports = function horrorNumberCheck(num) {
   const OK = 'хорошо';
   const BAD = 'НЕПРИЯТНОСТЬ';
   switch (num) {
-${rows.join('\n')}
+${rows.join(EOL)}
     default:
       return BAD;
   }

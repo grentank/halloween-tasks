@@ -4,19 +4,24 @@
 const spookyTimers = require('../tasks/spookyTimers');
 const { describe, it } = require('node:test');
 const { readFile } = require('fs/promises');
+const { EOL } = require('os');
 const assert = require('node:assert').strict;
 
 describe('Фунция spookyTimers', () => {
   it('Должна возвращать 666', async () => {
     const result = await spookyTimers();
-    assert.strictEqual(result, 13);
+    assert.strictEqual(result, 666, `Функция вернула ${result}, а не 666`);
   });
 
   it('Нельзя менять код кроме как на строчке 43', async () => {
     const jsContent = await readFile('./tasks/spookyTimers.js', 'utf8');
-    const lines = jsContent.split('\n');
+    const lines = jsContent.split(EOL);
     lines.splice(42, 1);
-    assert.strictEqual(lines.join('\n'), content);
+    assert.strictEqual(
+      lines.join(EOL),
+      content,
+      'Файл можно менять только на 43 строчке. Найдено изменение в другом месте',
+    );
   });
 });
 

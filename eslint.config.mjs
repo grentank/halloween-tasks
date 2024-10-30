@@ -20,6 +20,7 @@ export default [
       'no-else-return': 'off',
       'no-console': 'off',
       'no-promise-executor-return': 'off',
+      'no-nested-ternary': 'off',
     },
   },
 ];

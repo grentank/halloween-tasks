@@ -1,3 +1,4 @@
+const { EOL } = require('node:os');
 const horrorNumberCheck = require('../tasks/horrorNumberCheck');
 const { describe, it } = require('node:test');
 const assert = require('node:assert').strict;
@@ -21,5 +22,9 @@ describe('Функция horrorNumberCheck', () => {
     assert.equal(horrorNumberCheck(4013), 'НЕПРИЯТНОСТЬ');
     assert.equal(horrorNumberCheck(1378), 'НЕПРИЯТНОСТЬ');
     assert.equal(horrorNumberCheck(26667), 'НЕПРИЯТНОСТЬ');
+  });
+  it('Длина функции не больше 10 строк', () => {
+    const lines = horrorNumberCheck.toString().split(EOL).length;
+    assert.ok(lines <= 10, `Количество строк фукнции равно ${lines}, что больше 10`);
   });
 });

@@ -1,6 +1,5 @@
-const horrorNumberCheck = require('./tasks/horrorNumberCheck');
+const isHalloweenNumber = require('./tasks/isHalloweenNumber');
 
-console.log(horrorNumberCheck(123));
-console.log(horrorNumberCheck(3313));
-console.log(horrorNumberCheck(22222));
-console.log(horrorNumberCheck(26660));
+for (let index = -100; index < 100; index++) {
+  console.log(`${index}: ${isHalloweenNumber(index)}`);
+}
